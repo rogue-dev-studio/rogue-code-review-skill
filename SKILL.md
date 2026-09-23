@@ -19,32 +19,32 @@ Aligns with role **Code Reviewer** (`roles/quality/reviewer.md`) and hard rule `
 
 ## When to use
 
-- Review diff / PR / hasil implementasi developer
-- Fase Review pada `e2e-delivery`
-- Gate sebelum merge atau handoff QA
+- Review diff / PR / developer implementation output
+- Review phase in `e2e-delivery`
+- Gate before merge or QA handoff
 
 ## When not to use
 
-- Menulis fitur baru (kecuali contoh minimal untuk menjelaskan temuan)
-- Mengganti requirement atau arsitektur utama -> escalate Tech Lead / Architect
-- Pengujian fungsional mendalam saja -> `agentic-qe`
+- Writing new features (except minimal examples to explain findings)
+- Changing requirements or core architecture -> escalate Tech Lead / Architect
+- Deep functional testing only -> `agentic-qe`
 
 ## Procedure
 
-1. **Scope** - Batasi pada diff + kontrak terkait (API, schema, UI).
+1. **Scope** - Limit to diff + related contracts (API, schema, UI).
 2. **Architecture** - Layering, service boundary, no UI->DB.
-3. **Coding rule gate** - Jalankan checklist `rules/coding.md` lengkap (lihat `reference.md`).
-4. **Query ban** - Tolak raw SQL / query di controller, service sembarangan, view, frontend; akses data hanya ORM/repository-model.
-5. **Security & API** - Authz default deny; tidak bocorkan secret/stack; selaras `security` / `api` bila relevan.
-6. **Report** - Temuan berprioritas (blocker / major / minor) + rekomendasi; **jangan** mengimplementasi perbaikan sendiri kecuali diminta.
-7. **Verdict** - Approve / Request changes / Reject; simpan catatan di `project/{id}/docs/review/` saat E2E.
+3. **Coding rule gate** - Run full `rules/coding.md` checklist (see `reference.md`).
+4. **Query ban** - Reject raw SQL / queries in controller, arbitrary service, view, frontend; data access only via ORM/repository-model.
+5. **Security & API** - Authz default deny; do not leak secrets/stack; align with `security` / `api` when relevant.
+6. **Report** - Prioritized findings (blocker / major / minor) + recommendations; **do not** implement fixes yourself unless asked.
+7. **Verdict** - Approve / Request changes / Reject; save notes in `project/{id}/docs/review/` during E2E.
 
 ## DoD
 
-- [ ] Checklist coding.md selesai (termasuk larangan query)
-- [ ] Tidak ada major architecture violation tanpa escalate
-- [ ] Verdict dan path laporan jelas
-- [ ] Developer mendapat rekomendasi yang dapat ditindaklanjuti
+- [ ] coding.md checklist complete (including query ban)
+- [ ] No major architecture violation without escalation
+- [ ] Verdict and report path clear
+- [ ] Developer receives actionable recommendations
 
 ## Attribution
 

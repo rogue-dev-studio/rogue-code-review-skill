@@ -4,7 +4,7 @@ Mandatory checklist for Code Reviewer and for developer self-check before handof
 
 ## A. Coding standards (`rules/coding.md`)
 
-Catatan: header `@Author` / `@Date` / `@Last Modified` adalah **identitas saja** - **bukan** kriteria lulus/tolak code review.
+Note: `@Author` / `@Date` / `@Last Modified` headers are **identity only** — **not** pass/fail criteria for code review.
 
 - [ ] Readable, maintainable, scalable, efficient, secure, robust
 - [ ] High performance and high security considered
